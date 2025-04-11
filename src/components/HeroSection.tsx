@@ -10,7 +10,7 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-up">
-            <h1 className="text-5xl font-bold text-brand-navy mb-4">Bimal Bhattarai</h1>
+            <h1 className="text-5xl font-bold text-brand-navy mb-4">Bimal </h1>
             <h2 className="text-2xl text-brand-blue mb-6">DevOps Engineer & Cloud Architect</h2>
             <p className="text-lg text-gray-700 mb-8 max-w-xl">
               I'm a seasoned DevOps Engineer with over 7 years of experience specializing in

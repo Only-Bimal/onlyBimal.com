@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { Briefcase } from 'lucide-react';
+import React from "react";
+import { Briefcase } from "lucide-react";
 
 interface ExperienceProps {
   title: string;
@@ -10,7 +9,13 @@ interface ExperienceProps {
   description: string[];
 }
 
-const ExperienceItem: React.FC<ExperienceProps> = ({ title, company, period, location, description }) => {
+const ExperienceItem: React.FC<ExperienceProps> = ({
+  title,
+  company,
+  period,
+  location,
+  description,
+}) => {
   return (
     <div className="experience-card">
       <h3 className="text-xl font-semibold text-brand-navy">{title}</h3>
@@ -24,7 +29,9 @@ const ExperienceItem: React.FC<ExperienceProps> = ({ title, company, period, loc
       </div>
       <ul className="list-disc list-inside space-y-2 text-gray-700">
         {description.map((item, index) => (
-          <li key={index} className="pl-2">{item}</li>
+          <li key={index} className="pl-2">
+            {item}
+          </li>
         ))}
       </ul>
     </div>
@@ -34,17 +41,21 @@ const ExperienceItem: React.FC<ExperienceProps> = ({ title, company, period, loc
 const ExperienceSection: React.FC = () => {
   const experiences = [
     {
-      title: "DevOps Engineer",
-      company: "Leapfrog Technology Inc.",
-      period: "Jun 2021 - Present",
-      location: "Kathmandu, Nepal",
+      title: "Senior Manager - Appian Technical Architect",
+      company: "EXL Service",
+      period: "Apr 2018 - Present",
+      location: "Delhi-NCR, India",
       description: [
-        "Led AWS cloud migration for key projects, resulting in 30% reduced infrastructure costs and improved scalability.",
-        "Implemented CI/CD pipelines using GitHub Actions, decreasing deployment time by 40% and reducing manual errors.",
-        "Managed Kubernetes clusters and deployed microservices using Helm, improving application resilience and scalability.",
-        "Automated infrastructure provisioning with Terraform, ensuring consistency across environments.",
-        "Collaborated with development teams to enhance application monitoring and alerting using Prometheus and Grafana."
-      ]
+        "As an Appian Technical Architect at EXL, I provide strategic direction and technical leadership to our Appian practice."+
+        "I oversee the end-to-end delivery of Appian projects, ensuring adherence to best practices, scalability, and performance optimization."+
+        "My role involves collaborating with stakeholders to understand business requirements and translate them into technical solutions.",
+        "My role involves:",
+        "✅      Architecting robust Appian solutions that drive business efficiency",
+        "✅      Leading cross-functional teams to deliver high-quality applications",
+        "✅      Implementing automation and AI-driven workflows to enhance process optimization",
+        "✅      Mentoring developers and fostering a culture of innovation",
+        "With a passion for excellence and continuous improvement, I strive to push the boundaries of low-code development and create impactful, future-ready Appian solutions.",
+      ],
     },
     {
       title: "Software Engineer",
@@ -55,8 +66,8 @@ const ExperienceSection: React.FC = () => {
         "Developed and maintained backend APIs using Node.js and Express, supporting critical business functions.",
         "Collaborated with cross-functional teams to implement new features and improve existing functionality.",
         "Participated in code reviews, ensuring high code quality and adherence to best practices.",
-        "Worked closely with DevOps to streamline deployment processes and troubleshoot production issues."
-      ]
+        "Worked closely with DevOps to streamline deployment processes and troubleshoot production issues.",
+      ],
     },
     {
       title: "Software Engineer",
@@ -67,9 +78,9 @@ const ExperienceSection: React.FC = () => {
         "Built and maintained web applications using React and Node.js, delivering products that met client specifications.",
         "Contributed to the design and implementation of database schemas and API architectures.",
         "Worked in an agile development environment, participating in sprint planning, daily standups, and retrospectives.",
-        "Collaborated with design team to implement responsive UI components."
-      ]
-    }
+        "Collaborated with design team to implement responsive UI components.",
+      ],
+    },
   ];
 
   return (
