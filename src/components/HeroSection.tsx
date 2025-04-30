@@ -13,8 +13,8 @@ const HeroSection: React.FC = () => {
             <h1 className="text-5xl font-bold text-brand-navy mb-4">Bimal </h1>
             <h2 className="text-2xl text-brand-blue mb-6">DevOps Engineer & Cloud Architect</h2>
             <p className="text-lg text-gray-700 mb-8 max-w-xl">
-              I'm a seasoned DevOps Engineer with over 7 years of experience specializing in
-              containerization, cloud infrastructure, and CI/CD pipelines. I'm passionate about
+              I'm a seasoned Solutions Architect with over 15 years of experience specializing in
+              designing, implementing, and deploying solutions across multiple verticals and for multiple clients. I'm passionate about
               automating processes and building resilient systems.
             </p>
             <div className="flex flex-wrap gap-4">

@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 
 interface SkillCategoryProps {
   title: string;
@@ -25,40 +24,20 @@ const SkillsSection: React.FC = () => {
   const skillCategories = [
     {
       title: "Cloud Platforms",
-      skills: ["AWS", "Azure", "Google Cloud Platform", "Digital Ocean"]
-    },
-    {
-      title: "Containerization & Orchestration",
-      skills: ["Docker", "Kubernetes", "Helm", "ECS", "AKS"]
-    },
-    {
-      title: "Infrastructure as Code",
-      skills: ["Terraform", "CloudFormation", "Pulumi", "AWS CDK"]
-    },
-    {
-      title: "CI/CD",
-      skills: ["Jenkins", "GitHub Actions", "GitLab CI", "CircleCI", "ArgoCD"]
-    },
-    {
-      title: "Configuration Management",
-      skills: ["Ansible", "Chef", "Puppet"]
-    },
-    {
-      title: "Monitoring & Logging",
-      skills: ["Prometheus", "Grafana", "ELK Stack", "CloudWatch", "Datadog"]
+      skills: ["AWS", "Azure"],
     },
     {
       title: "Programming Languages",
-      skills: ["JavaScript", "TypeScript", "Python", "Go", "Bash"]
+      skills: ["JavaScript", "TypeScript", "C#", ".Net Framework"],
     },
     {
       title: "Databases",
-      skills: ["MongoDB", "PostgreSQL", "MySQL", "DynamoDB", "Redis"]
+      skills: ["MS Sql Server", "Oracle", "MySQL", "MongoDB"],
     },
     {
       title: "Web Technologies",
-      skills: ["Node.js", "Express", "React", "Next.js"]
-    }
+      skills: ["Node.js", "Express", "React", "AngularJS", "HTML", "CSS"],
+    },
   ];
 
   return (

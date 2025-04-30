@@ -46,9 +46,9 @@ const ExperienceSection: React.FC = () => {
       period: "Apr 2018 - Present",
       location: "Delhi-NCR, India",
       description: [
-        "As an Appian Technical Architect at EXL, I provide strategic direction and technical leadership to our Appian practice."+
-        "I oversee the end-to-end delivery of Appian projects, ensuring adherence to best practices, scalability, and performance optimization."+
-        "My role involves collaborating with stakeholders to understand business requirements and translate them into technical solutions.",
+        "As an Appian Technical Architect at EXL, I provide strategic direction and technical leadership to our Appian practice." +
+          "I oversee the end-to-end delivery of Appian projects, ensuring adherence to best practices, scalability, and performance optimization." +
+          "My role involves collaborating with stakeholders to understand business requirements and translate them into technical solutions.",
         "My role involves:",
         "✅      Architecting robust Appian solutions that drive business efficiency",
         "✅      Leading cross-functional teams to deliver high-quality applications",
@@ -58,27 +58,34 @@ const ExperienceSection: React.FC = () => {
       ],
     },
     {
-      title: "Software Engineer",
-      company: "Leapfrog Technology Inc.",
-      period: "Mar 2018 - Jun 2021",
-      location: "Kathmandu, Nepal",
+      title: "Senior Software Engineer",
+      company: "HCL Technologies",
+      period: "Jul 2011 - Mar 2018",
+      location: "Delhi-NCR, India",
       description: [
-        "Developed and maintained backend APIs using Node.js and Express, supporting critical business functions.",
-        "Collaborated with cross-functional teams to implement new features and improve existing functionality.",
-        "Participated in code reviews, ensuring high code quality and adherence to best practices.",
-        "Worked closely with DevOps to streamline deployment processes and troubleshoot production issues.",
+        "I mentored and managed the team for multiple projects I worked upon. Additionally, I" +
+          "designed and coded the reusable frameworks for the projects. Additionally, I worked on automation of the current work using Blue Prism.",
+      ],
+    },
+    {
+      title: "Lead Software Engineer",
+      company: "Boss Computech",
+      period: "Sep 2010 - Jul 2011",
+      location: "Delhi-NCR, India",
+      description: [
+        "I was responsible for the development of the windows application which was the backend engine for the frontend application. " +
+          "I worked on the design and development of the application using Delphi, VB.Net, and C#.",
       ],
     },
     {
       title: "Software Engineer",
-      company: "BG SOFT Ltd.",
-      period: "Apr 2016 - Feb 2018",
-      location: "Kathmandu, Nepal",
+      company: "Interactive Education Ltd.",
+      period: "May 2008 - Aug 2010",
+      location: "Delhi-NCR, India",
       description: [
-        "Built and maintained web applications using React and Node.js, delivering products that met client specifications.",
-        "Contributed to the design and implementation of database schemas and API architectures.",
-        "Worked in an agile development environment, participating in sprint planning, daily standups, and retrospectives.",
-        "Collaborated with design team to implement responsive UI components.",
+        "I was responsible for the development of the windows & mac application which was used to interface the client's hardware to the " +
+          "software. I was also responsible for the hardware design and testing for the client. " +
+          "I worked on the design and development using VB.Net, and C#.",
       ],
     },
   ];

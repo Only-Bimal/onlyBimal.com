@@ -68,12 +68,6 @@ const EducationSection: React.FC = () => {
       location: "Online",
     },
     {
-      degree: "Appian Developer Certification",
-      institution: "Appian",
-      period: "2021",
-      location: "Online",
-    },
-    {
       degree: "AWS Certified Cloud Practitioner ",
       institution: "Amazon Web Services",
       period: "2021",
