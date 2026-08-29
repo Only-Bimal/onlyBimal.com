@@ -48,6 +48,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-brand-blue focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
