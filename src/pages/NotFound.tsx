@@ -6,19 +6,41 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
+    const description = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    const previous = {
+      description: description?.getAttribute("content"),
+      ogTitle: ogTitle?.getAttribute("content"),
+      ogDescription: ogDescription?.getAttribute("content"),
+    };
+
+    description?.setAttribute(
+      "content",
+      "The page you requested could not be found on Bimal's portfolio website.",
+    );
+    ogTitle?.setAttribute("content", "Page Not Found | Bimal");
+    ogDescription?.setAttribute(
+      "content",
+      "The page you requested could not be found on Bimal's portfolio website.",
+    );
+
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+
+    return () => {
+      if (previous.description) description?.setAttribute("content", previous.description);
+      if (previous.ogTitle) ogTitle?.setAttribute("content", previous.ogTitle);
+      if (previous.ogDescription) ogDescription?.setAttribute("content", previous.ogDescription);
+    };
   }, [location.pathname]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <Helmet>
         <title>Page Not Found | Bimal</title>
-        <meta name="description" content="The page you requested could not be found on Bimal's portfolio website." />
-        <meta property="og:title" content="Page Not Found | Bimal" />
-        <meta property="og:description" content="The page you requested could not be found on Bimal's portfolio website." />
         <meta name="robots" content="noindex" />
       </Helmet>
       <div className="text-center">
