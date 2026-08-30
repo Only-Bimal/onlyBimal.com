@@ -13,4 +13,5 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://onlybimal.lovable.app/sitemap.xml
+Sitemap: https://onlybimal.com/sitemap.xml
+

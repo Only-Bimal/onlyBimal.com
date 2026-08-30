@@ -46,8 +46,8 @@ const ExperienceSection: React.FC = () => {
       period: "Apr 2018 - Present",
       location: "Delhi-NCR, India",
       description: [
-        "As an Appian Technical Architect at EXL, I provide strategic direction and technical leadership to our Appian practice." +
-          "I oversee the end-to-end delivery of Appian projects, ensuring adherence to best practices, scalability, and performance optimization." +
+        "As an Appian Technical Architect at EXL, I provide strategic direction and technical leadership to our Appian practice. " +
+          "I oversee the end-to-end delivery of Appian projects, ensuring adherence to best practices, scalability, and performance optimization. " +
           "My role involves collaborating with stakeholders to understand business requirements and translate them into technical solutions.",
         "My role involves:",
         "✅      Architecting robust Appian solutions that drive business efficiency",
@@ -91,7 +91,7 @@ const ExperienceSection: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="bg-gray-50">
+    <section id="experience" className="bg-gray-50 content-auto">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">Professional Experience</h2>
         <div className="space-y-2">

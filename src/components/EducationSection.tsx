@@ -68,7 +68,7 @@ const EducationSection: React.FC = () => {
       location: "Online",
     },
     {
-      degree: "AWS Certified Cloud Practitioner ",
+      degree: "AWS Certified Cloud Practitioner",
       institution: "Amazon Web Services",
       period: "2021",
       location: "Online",
@@ -86,7 +86,7 @@ const EducationSection: React.FC = () => {
       location: "Online",
     },
     {
-      degree: "UiPath Developer Foundation ",
+      degree: "UiPath Developer Foundation",
       institution: "UiPath",
       period: "2018",
       location: "Online",
@@ -94,7 +94,7 @@ const EducationSection: React.FC = () => {
   ];
 
   return (
-    <section id="education" className="bg-gray-50">
+    <section id="education" className="bg-gray-50 content-auto">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">Education & Certifications</h2>
 

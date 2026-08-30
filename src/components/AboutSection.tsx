@@ -18,7 +18,7 @@ const AboutSection: React.FC = () => {
               VB.NET, and SQL databases, I have successfully led and contributed
               to various high-impact projects, delivering efficiency, cost
               savings, and enhanced solutions. My experience spans across client
-              interaction, consulting, designing, developement and project
+              interaction, consulting, designing, development and project
               management.
             </p>
             <ul className="list-disc list-inside text-gray-700 mb-4">

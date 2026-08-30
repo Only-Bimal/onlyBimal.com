@@ -10,30 +10,36 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="animate-fade-up">
-            <h1 className="text-5xl font-bold text-brand-navy mb-4">Bimal — DevOps Engineer &amp; Cloud Architect</h1>
-            <h2 className="text-2xl text-brand-blue mb-6">DevOps Engineer & Cloud Architect</h2>
+            <h1 className="text-5xl font-bold text-brand-navy mb-4">Bimal</h1>
+            <h2 className="text-2xl text-brand-blue font-semibold mb-6">Solutions Architect &amp; Appian Technical Architect</h2>
             <p className="text-lg text-gray-700 mb-8 max-w-xl">
               I'm a seasoned Solutions Architect with over 15 years of experience specializing in
-              designing, implementing, and deploying solutions across multiple verticals and for multiple clients. I'm passionate about
+              designing, implementing, and deploying low-code, BPM, RPA, and cloud solutions across multiple verticals. I'm passionate about
               automating processes and building resilient systems.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild className="bg-brand-blue hover:bg-brand-navy text-white">
                 <a href="#contact">Get in Touch</a>
               </Button>
-              <Button variant="outline" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
-                <Download className="mr-2 h-4 w-4" />
-                <a href="/resume.pdf" download>Download Resume</a>
+              <Button asChild variant="outline" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
+                <a href="/resume.pdf" download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </a>
               </Button>
             </div>
           </div>
           <div className="hidden md:block">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/20 to-brand-navy/20 rounded-lg transform rotate-3"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" 
-                alt="DevOps Illustration" 
-                className="rounded-lg shadow-xl relative z-10 transform -rotate-3 transition-transform hover:rotate-0 duration-300"
+              <img
+                src="/hero.avif"
+                alt="DevOps and Solutions Architecture Illustration"
+                width={800}
+                height={533}
+                loading="eager"
+                fetchPriority="high"
+                className="rounded-lg shadow-xl relative z-10 transform -rotate-3 transition-transform hover:rotate-0 duration-300 w-full h-auto object-cover"
               />
             </div>
           </div>

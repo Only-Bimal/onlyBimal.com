@@ -6,9 +6,29 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const [activeSection, setActiveSection] = useState('hero');
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
+      const sections = ['about', 'experience', 'skills', 'education', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(section);
+            return;
+          }
+        }
+      }
+      if (window.scrollY < 200) {
+        setActiveSection('hero');
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -16,11 +36,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Experience', href: '#experience', id: 'experience' },
+    { name: 'Skills', href: '#skills', id: 'skills' },
+    { name: 'Education', href: '#education', id: 'education' },
+    { name: 'Contact', href: '#contact', id: 'contact' }
   ];
 
   return (
@@ -28,7 +48,10 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <a href="#" className="text-xl font-bold text-brand-navy">
+            <a 
+              href="#hero" 
+              className="text-xl font-bold text-brand-navy hover:text-brand-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded-md px-1"
+            >
               Bimal 
             </a>
           </div>
@@ -38,7 +61,12 @@ const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-brand-blue transition-colors"
+                  aria-current={activeSection === link.id ? 'page' : undefined}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue ${
+                    activeSection === link.id
+                      ? 'text-brand-blue font-semibold bg-brand-light/70'
+                      : 'text-gray-700 hover:text-brand-blue'
+                  }`}
                 >
                   {link.name}
                 </a>
@@ -48,17 +76,22 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-brand-blue focus:outline-none"
+              aria-label={isOpen ? "Close menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 invisible'}`}>
+      <div 
+        id="mobile-menu" 
+        className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 invisible'}`}
+      >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
           {navLinks.map((link) => (
             <a
