@@ -1,4 +1,5 @@
 import React from "react";
+import portfolioData from "@/data/portfolioData.json";
 
 interface SkillCategoryProps {
   title: string;
@@ -8,7 +9,7 @@ interface SkillCategoryProps {
 const SkillCategory: React.FC<SkillCategoryProps> = ({ title, skills }) => {
   return (
     <div>
-      <h3 className="text-xl font-semibold text-brand-navy mb-3">{title}</h3>
+      <h3 className="text-xl font-semibold text-brand-navy dark:text-slate-100 mb-3 transition-colors">{title}</h3>
       <div className="flex flex-wrap gap-2 mb-6">
         {skills.map((skill, index) => (
           <span key={index} className="skill-badge">
@@ -21,31 +22,14 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({ title, skills }) => {
 };
 
 const SkillsSection: React.FC = () => {
-  const skillCategories = [
-    {
-      title: "Cloud Platforms",
-      skills: ["AWS", "Azure"],
-    },
-    {
-      title: "Programming Languages",
-      skills: ["JavaScript", "TypeScript", "C#", ".Net Framework"],
-    },
-    {
-      title: "Databases",
-      skills: ["MS Sql Server", "Oracle", "MySQL", "MongoDB"],
-    },
-    {
-      title: "Web Technologies",
-      skills: ["Node.js", "Express", "React", "AngularJS", "HTML", "CSS"],
-    },
-  ];
+  const { skills } = portfolioData;
 
   return (
-    <section id="skills" className="bg-white content-auto">
+    <section id="skills" className="bg-white dark:bg-slate-800 content-auto transition-colors duration-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-title">Technical Skills</h2>
+        <h2 className="section-title">{skills.sectionTitle}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
+          {skills.categories.map((category, index) => (
             <SkillCategory
               key={index}
               title={category.title}

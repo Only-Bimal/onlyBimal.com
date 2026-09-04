@@ -1,5 +1,5 @@
 import React from "react";
-import { Briefcase } from "lucide-react";
+import portfolioData from "@/data/portfolioData.json";
 
 interface ExperienceProps {
   title: string;
@@ -18,16 +18,16 @@ const ExperienceItem: React.FC<ExperienceProps> = ({
 }) => {
   return (
     <div className="experience-card">
-      <h3 className="text-xl font-semibold text-brand-navy">{title}</h3>
+      <h3 className="text-xl font-semibold text-brand-navy dark:text-slate-100 transition-colors">{title}</h3>
       <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-        <p className="text-brand-blue font-medium">{company}</p>
-        <div className="text-sm text-gray-500">
+        <p className="text-brand-blue dark:text-blue-400 font-medium transition-colors">{company}</p>
+        <div className="text-sm text-gray-500 dark:text-slate-400 transition-colors">
           <span>{period}</span>
           <span className="mx-2">•</span>
           <span>{location}</span>
         </div>
       </div>
-      <ul className="list-disc list-inside space-y-2 text-gray-700">
+      <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-slate-300 transition-colors">
         {description.map((item, index) => (
           <li key={index} className="pl-2">
             {item}
@@ -39,63 +39,14 @@ const ExperienceItem: React.FC<ExperienceProps> = ({
 };
 
 const ExperienceSection: React.FC = () => {
-  const experiences = [
-    {
-      title: "Senior Manager - Appian Technical Architect",
-      company: "EXL Service",
-      period: "Apr 2018 - Present",
-      location: "Delhi-NCR, India",
-      description: [
-        "As an Appian Technical Architect at EXL, I provide strategic direction and technical leadership to our Appian practice. " +
-          "I oversee the end-to-end delivery of Appian projects, ensuring adherence to best practices, scalability, and performance optimization. " +
-          "My role involves collaborating with stakeholders to understand business requirements and translate them into technical solutions.",
-        "My role involves:",
-        "✅      Architecting robust Appian solutions that drive business efficiency",
-        "✅      Leading cross-functional teams to deliver high-quality applications",
-        "✅      Implementing automation and AI-driven workflows to enhance process optimization",
-        "✅      Mentoring developers and fostering a culture of innovation",
-        "With a passion for excellence and continuous improvement, I strive to push the boundaries of low-code development and create impactful, future-ready Appian solutions.",
-      ],
-    },
-    {
-      title: "Senior Software Engineer",
-      company: "HCL Technologies",
-      period: "Jul 2011 - Mar 2018",
-      location: "Delhi-NCR, India",
-      description: [
-        "I mentored and managed the team for multiple projects I worked upon. Additionally, I" +
-          "designed and coded the reusable frameworks for the projects. Additionally, I worked on automation of the current work using Blue Prism.",
-      ],
-    },
-    {
-      title: "Lead Software Engineer",
-      company: "Boss Computech",
-      period: "Sep 2010 - Jul 2011",
-      location: "Delhi-NCR, India",
-      description: [
-        "I was responsible for the development of the windows application which was the backend engine for the frontend application. " +
-          "I worked on the design and development of the application using Delphi, VB.Net, and C#.",
-      ],
-    },
-    {
-      title: "Software Engineer",
-      company: "Interactive Education Ltd.",
-      period: "May 2008 - Aug 2010",
-      location: "Delhi-NCR, India",
-      description: [
-        "I was responsible for the development of the windows & mac application which was used to interface the client's hardware to the " +
-          "software. I was also responsible for the hardware design and testing for the client. " +
-          "I worked on the design and development using VB.Net, and C#.",
-      ],
-    },
-  ];
+  const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="bg-gray-50 content-auto">
+    <section id="experience" className="bg-gray-50 dark:bg-[#182234] content-auto transition-colors duration-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-title">Professional Experience</h2>
+        <h2 className="section-title">{experience.sectionTitle}</h2>
         <div className="space-y-2">
-          {experiences.map((exp, index) => (
+          {experience.items.map((exp, index) => (
             <ExperienceItem
               key={index}
               title={exp.title}
